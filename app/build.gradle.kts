@@ -88,4 +88,8 @@ dependencies {
     // required by ktor internally (release only)
     //noinspection UseTomlInstead
     implementation("org.slf4j:slf4j-simple:2.0.6")
+    def appCenterSdkVersion = '5.0.4'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+
 }
