@@ -34,12 +34,16 @@ import cz.lastaapps.menza.features.root.ui.navigation.RootContent
 import cz.lastaapps.menza.ui.ApplyAppTheme
 import cz.lastaapps.menza.ui.locals.WithFoldingFeature
 import cz.lastaapps.menza.ui.locals.WithLocalWindowSizes
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        AppCenter.start(getApplication(), "a3548984-479d-4c7b-bf63-ff26726ce3dc",
+                  Analytics.class, Crashes.class);
         var isReady = false
         val splashScreen = installSplashScreen()
         splashScreen.setKeepOnScreenCondition {
